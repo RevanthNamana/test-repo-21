@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Artifact_Status__c</fullName>
+        <label>Artifact Status</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Rejected</fullName>
+                    <default>false</default>
+                    <label>Rejected</label>
+                </value>
+                <value>
+                    <fullName>Superseded</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Superseded</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <validationRules>
+        <fullName>Locked</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+     Is_Locked__c = TRUE,
+    OR(
+        ISCHANGED(Version__c),
+        ISCHANGED(Solicitation_Required__c),
+        ISCHANGED(Is_Locked__c),
+        ISCHANGED(Artifact_Status__c),
+        ISCHANGED(Passings_Count__c),
+        ISCHANGED(Rejection_Reason__c)
+    )
+)</errorConditionFormula>
+        <errorMessage>No changes are allowed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>manager_approval</fullName>
+        <active>true</active>
+        <errorConditionFormula>OR(
+    
+    Is_Locked__c = TRUE,
+
+    
+    AND(
+        ISPICKVAL(PRIORVALUE(Artifact_Status__c), &quot;Submitted&quot;),
+        ISPICKVAL(Artifact_Status__c, &quot;Approved&quot;)
+    )
+)</errorConditionFormula>
+        <errorMessage>This record  cannot be moved to Approved without manager approval.</errorMessage>
+    </validationRules>
+</CustomObject>
