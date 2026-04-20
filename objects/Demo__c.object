@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Check_Status__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Check Status</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Demo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Demo</label>
+        <referenceTo>Demo__c</referenceTo>
+        <relationshipLabel>Demos</relationshipLabel>
+        <relationshipName>Demos</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Salary__c</fullName>
+        <label>Salary</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>date_time__c</fullName>
+        <label>date/time</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+</CustomObject>
