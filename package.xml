@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>TESTING__c.Activation_date__c</members>
+        <members>TEST__c.Activation_date__c</members>
         <name>CustomField</name>
     </types>
     <types>
-        <members>TESTING__c</members>
+        <members>TEST__c</members>
         <name>CustomObject</name>
     </types>
     <types>
-        <members>TESTING__c-TESTING Layout</members>
+        <members>TEST__c-TEST Layout</members>
         <name>Layout</name>
     </types>
     <types>
-        <members>TESTING__c</members>
+        <members>TEST__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>TEST__c</members>
         <name>SharingRules</name>
     </types>
     <version>66.0</version>
