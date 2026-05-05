@@ -8,7 +8,7 @@ public class Factorialnum {
             System.debug('Factorial of ' + f + ' is: ' + fact);
         }
         else {
-            System.debug('');
+            System.debug('factorial ');
         }
     }
 }
