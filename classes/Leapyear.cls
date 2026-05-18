@@ -14,7 +14,7 @@ public class Leapyear {
                 System.debug('provided year is a leap year' + yy);
             return true;
            } else {
-               System.debug('This is not a Leap Year');
+               System.debug('main code');
                return false;
            }
     }
